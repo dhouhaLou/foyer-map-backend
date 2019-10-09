@@ -41,12 +41,12 @@ twig:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver: pdo_mysql
-        host: '%database_host%'
-        port: '%database_port%'
-        dbname: '%database_name%'
-        user: '%database_user%'
-        password: '%database_password%'
+        driver: pdo_pgsql
+        #host: '%database_host%'
+        #port: '%database_port%'
+        #dbname: '%database_name%'
+        #user: '%database_user%'
+        #password: '%database_password%'
         charset: UTF8
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
@@ -54,6 +54,7 @@ doctrine:
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
         #path: '%database_path%'
+        url: "%env(DATABASE_URL)%"
 
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
@@ -80,8 +81,8 @@ fos_user:
     service:                               # this lines
         mailer: fos_user.mailer.twig_swift # this lines
     from_email:
-        address: "douhalou4@gmail.com"
-        sender_name: "douhalouhichi1995"
+        address: "foyer_map@gmail.com"
+        sender_name: "douha"
 
 # Nelmio CORS Configuration
 nelmio_cors:
